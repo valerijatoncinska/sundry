@@ -66,6 +66,7 @@ function showLoadingOverlay({ art, text, duration = 5000 }) {
       img.naturalWidth > img.naturalHeight
         ? "artRiseLandscape"
         : "artRisePortrait";
+  }
 
   const style = document.createElement("style");
   style.id = "sundry-skyrim-loading-tip-style";
@@ -94,7 +95,6 @@ function showLoadingOverlay({ art, text, duration = 5000 }) {
 
   `;
   document.head.appendChild(style);
-  }
 
   const overlay = document.createElement("div");
   overlay.id = "sundry-skyrim-loading-tip";
