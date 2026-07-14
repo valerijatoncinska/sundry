@@ -62,7 +62,7 @@ function showLoadingOverlay({ art, text, duration = 5000 }) {
   img.src = art;
 
   img.onload = () => {
-    const animation =
+    const artRise =
       img.naturalWidth > img.naturalHeight
         ? "artRiseLandscape"
         : "artRisePortrait";
