@@ -58,11 +58,14 @@ function showLoadingOverlay({ art, text, duration = 5000 }) {
   const existing = document.getElementById("sundry-skyrim-loading-tip");
   if (existing) existing.remove();
 
-  art.onload = () => {
-  const artRise =
-    art.naturalWidth > img.naturalHeight
-      ? "artRiseLandscape"
-      : "artRisePortrait";
+  const img = new Image();
+  img.src = art;
+
+  img.onload = () => {
+    const animation =
+      img.naturalWidth > img.naturalHeight
+        ? "artRiseLandscape"
+        : "artRisePortrait";
 
   const style = document.createElement("style");
   style.id = "sundry-skyrim-loading-tip-style";
