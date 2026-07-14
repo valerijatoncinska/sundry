@@ -97,7 +97,6 @@ function showLoadingOverlay({ art, text, duration = 5000 }) {
   `;
 
   document.head.appendChild(style);
-  }
 
   const overlay = document.createElement("div");
   overlay.id = "sundry-skyrim-loading-tip";
