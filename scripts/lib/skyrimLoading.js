@@ -60,6 +60,8 @@ function showLoadingOverlay({ art, text, duration = 5000 }) {
 
   const img = new Image();
   img.src = art;
+  
+  await img.decode();
 
   img.onload = () => {
     const animation =
