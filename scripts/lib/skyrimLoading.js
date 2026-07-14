@@ -61,12 +61,13 @@ function showLoadingOverlay({ art, text, duration = 5000 }) {
   const img = new Image();
   img.src = art;
 
-  await img.decode();
-
-  const animation =
-    img.naturalWidth > img.naturalHeight
-      ? "artRiseLandscape"
-      : "artRisePortrait";
+  img.onload = () => {
+    const animation =
+      img.naturalWidth > img.naturalHeight
+        ? "artRiseLandscape"
+        : "artRisePortrait";
+  
+  art.style.opacity = "0"
 
   const style = document.createElement("style");
   style.id = "sundry-skyrim-loading-tip-style";
@@ -80,6 +81,7 @@ function showLoadingOverlay({ art, text, duration = 5000 }) {
       object-fit: contain;
       object-position: bottom center;
       z-index: 2;
+      opacity: 1;
       animation: ${animation} ${duration}ms;
     }
 
@@ -95,6 +97,7 @@ function showLoadingOverlay({ art, text, duration = 5000 }) {
   `;
 
   document.head.appendChild(style);
+  }
 
   const overlay = document.createElement("div");
   overlay.id = "sundry-skyrim-loading-tip";
