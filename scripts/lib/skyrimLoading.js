@@ -66,8 +66,6 @@ function showLoadingOverlay({ art, text, duration = 5000 }) {
       img.naturalWidth > img.naturalHeight
         ? "artRiseLandscape"
         : "artRisePortrait";
-  
-  art.style.opacity = "0"
 
   const style = document.createElement("style");
   style.id = "sundry-skyrim-loading-tip-style";
@@ -81,8 +79,7 @@ function showLoadingOverlay({ art, text, duration = 5000 }) {
       object-fit: contain;
       object-position: bottom center;
       z-index: 2;
-      opacity: 1;
-      animation: ${animation} ${duration}ms;
+      animation: ${animation} ${duration}ms ease-out both;
     }
 
     @keyframes artRiseLandscape {
