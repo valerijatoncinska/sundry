@@ -85,8 +85,8 @@ function showLoadingOverlay({ art, text, duration = 5000 }) {
     }
 
     @keyframes artRisePortrait {
-      from { transform: translateY(0); }
-      to   { transform: translateY(-20%); }
+      from { transform: translateY(20); }
+      to   { transform: translateY(0%); }
     }
 
   `;
