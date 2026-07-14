@@ -125,6 +125,7 @@ function showLoadingOverlay({ art, text, duration = 5000 }) {
   setTimeout(() => {
     closeOutOverlay({ overlay, style, fast: false });
   }, duration);
+  }
 }
 
 function closeOutOverlay({
