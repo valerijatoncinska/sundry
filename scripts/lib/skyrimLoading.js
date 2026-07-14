@@ -57,6 +57,10 @@ export async function setupSkyrimLoadingTips(active = true) {
 function showLoadingOverlay({ art, text, duration = 5000 }) {
   const existing = document.getElementById("sundry-skyrim-loading-tip");
   if (existing) existing.remove();
+  var riseDistance =
+    art.naturalWidth > art.naturalHeight
+      ? "-10%"
+      : "-20%";
 
   const style = document.createElement("style");
   style.id = "sundry-skyrim-loading-tip-style";
@@ -70,6 +74,7 @@ function showLoadingOverlay({ art, text, duration = 5000 }) {
       object-fit:contain;
       object-position:bottom center;
       z-index:2;
+      rise-distance: ${riseDistance};
       animation: artRise ${duration}ms;
     }
   `;
