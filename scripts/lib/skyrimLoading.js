@@ -84,11 +84,11 @@ function showLoadingOverlay({ art, text, duration = 5000 }) {
 
     @keyframes artRiseLandscape {
       from { transform: translateY(0); }
-      to   { transform: translateY(-30%); }
+      to   { transform: translateY(-20%); }
     }
 
     @keyframes artRisePortrait {
-      from { transform: translateY(20%); }
+      from { transform: translateY(10%); }
       to   { transform: translateY(0%); }
     }
   `;
